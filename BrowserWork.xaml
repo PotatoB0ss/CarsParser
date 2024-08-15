@@ -1,0 +1,570 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BrowserWork" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:usfr="clr-namespace:UiPath.Studio.Forms.Runtime;assembly=UiPath.Studio.Forms.Runtime" xmlns:uue="clr-namespace:UiPath.UIAutomationNext.Exceptions;assembly=UiPath.UIAutomationNext" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_siteToWorkURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_carMake" Type="InArgument(x:String)" />
+    <x:Property Name="in_carModel" Type="InArgument(x:String)" />
+    <x:Property Name="in_carPriceFrom" Type="InArgument(x:String)" />
+    <x:Property Name="in_carPriceTo" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1191.2,3892.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Exceptions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Studio.Forms.Runtime</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Forms.Activities</x:String>
+      <x:String>UiPath.Platform.GlobalVariables</x:String>
+      <x:String>UiPath.Forms.Activities.Base</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="BrowserWork" sap:VirtualizedContainerService.HintSize="1201.6,3828" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." sap:VirtualizedContainerService.HintSize="1139.2,3739.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1105.6,3499.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click car make" sap:VirtualizedContainerService.HintSize="1043.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CvElementArea="413, 663, 18, 18" CvTextArea="360, 665, 52, 18" CvTextArgument="MapKa" CvType="ArrowButton" DesignTimeRectangle="340, 649, 302, 44" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Марка Марка'" FullSelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' type='button' class='dropdown__control dropdown-floatlabel' aaname='Марка' check:innerText='Марка&amp;#xD;&amp;#xA;Марка' /&gt;" Guid="04fcffa3-d685-4a2b-8d6d-d07e6207479c" ImageBase64="" InformativeScreenshot="694bfb524682ad11d39681bda6eeb6b7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="358, 192, 86, 32" CvTextArgument="av.by" CvType="Text" DesignTimeRectangle="360, 195, 82, 27" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='' aaname='' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DisplayName="Type into car make" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1043.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CvTextArea="361, 763, 44, 14" CvTextArgument="Nonck" CvType="Text" DesignTimeRectangle="340, 750, 253, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='dropdown__input' aaname='' /&gt;" Guid="a505d071-20e2-469f-920f-a6e142aeb11a" InformativeScreenshot="3fff390dac2d5fe39a68b6e1153a24cf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="358, 192, 85, 32" CvTextArgument="av.by" CvType="Text" DesignTimeRectangle="360, 195, 82, 27" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='' aaname='' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">in_carMake</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+            </uix:NTypeInto>
+            <TryCatch DisplayName="Try to find specified car" sap:VirtualizedContainerService.HintSize="1043.2,1348" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <Sequence sap:VirtualizedContainerService.HintSize="416,1061.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Press enter and verify that cars not found element disappeared" ClickBeforeMode="None" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="353.6,290.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="DebuggerApi" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Label 'Такой марки'" Mode="Disappears" Retry="False" Timeout="5">
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://av.by/" DesignTimeRectangle="340, 450, 270, 60" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Такой марки'" FullSelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' type='' aaname='Такой марки сейчас нет или вы сделали ошибку в написании' check:innerText='Такой марки сейчас нет или вы сделали ошибку в написании' /&gt;" Guid="b0b61bfd-8ac2-42e9-acf8-95c4cbe58c42" InformativeScreenshot="f2118352b9b33464db7a28b2897e3486.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvElementArea="720, 324, 18, 18" CvTextArea="656, 325, 63, 17" CvTextArgument="Monenb" CvType="ArrowButton" DesignTimeRectangle="656, 309, 282, 44" FriendlyName="'Модель Модель'" FullSelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' type='' class='dropdown-floatlabel__box' aaname='' check:innerText='Модель&amp;#xD;&amp;#xA;Модель' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionOptions.Target>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NKeyboardShortcuts.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                  <uix:NSelectItem DelayBefore="1" DisplayName="Select car model" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+                    <uix:NSelectItem.Item>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">in_carModel</CSharpValue>
+                      </InArgument>
+                    </uix:NSelectItem.Item>
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                        <x:String>Любой</x:String>
+                        <x:String>190 (W201)</x:String>
+                        <x:String>A-Класс</x:String>
+                        <x:String>A-Класс AMG</x:String>
+                        <x:String>AMG GT</x:String>
+                        <x:String>B-Класс</x:String>
+                        <x:String>C-Класс</x:String>
+                        <x:String>C-Класс AMG</x:String>
+                        <x:String>Citan</x:String>
+                        <x:String>CL</x:String>
+                        <x:String>CLA</x:String>
+                        <x:String>CLA AMG</x:String>
+                        <x:String>CLC</x:String>
+                        <x:String>CLE</x:String>
+                        <x:String>CLK</x:String>
+                        <x:String>CLS</x:String>
+                        <x:String>CLS AMG</x:String>
+                        <x:String>E-Класс</x:String>
+                        <x:String>E-Класс All-Terrain</x:String>
+                        <x:String>E-Класс AMG</x:String>
+                        <x:String>EQA</x:String>
+                        <x:String>EQB</x:String>
+                        <x:String>EQC</x:String>
+                        <x:String>EQE</x:String>
+                        <x:String>EQE SUV</x:String>
+                        <x:String>EQS</x:String>
+                        <x:String>EQS SUV</x:String>
+                        <x:String>EQV</x:String>
+                        <x:String>G-Класс</x:String>
+                        <x:String>G-Класс AMG</x:String>
+                        <x:String>GL-Класс</x:String>
+                        <x:String>GL-Класс AMG</x:String>
+                        <x:String>GLA</x:String>
+                        <x:String>GLA AMG</x:String>
+                        <x:String>GLB</x:String>
+                        <x:String>GLC</x:String>
+                        <x:String>GLC AMG</x:String>
+                        <x:String>GLC Coupe</x:String>
+                        <x:String>GLC Coupe AMG</x:String>
+                        <x:String>GLE</x:String>
+                        <x:String>GLE AMG</x:String>
+                        <x:String>GLE Coupe</x:String>
+                        <x:String>GLE Coupe AMG</x:String>
+                        <x:String>GLK</x:String>
+                        <x:String>GLS</x:String>
+                        <x:String>GLS AMG</x:String>
+                        <x:String>M-Класс</x:String>
+                        <x:String>M-Класс AMG</x:String>
+                        <x:String>Marco Polo</x:String>
+                        <x:String>Maybach</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://av.by/" CvElementArea="720, 424, 18, 18" CvTextArea="655, 425, 64, 17" CvTextArgument="Monenb" CvType="ArrowButton" DesignTimeRectangle="656, 409, 282, 44" DesignTimeScaleFactor="1" FriendlyName="'Модель 2'" FullSelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' type='' class='dropdown-floatlabel__box' aaname='' /&gt;" Guid="e9977033-1ae5-461a-8749-06ba3f8dbf12" ImageBase64="" InformativeScreenshot="a29ec005e23c885fa6178752b36c3313.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="359, 373, 858, 22" CvTextArgument="NonCK no napaMetpaM + Mapka" CvType="Text" DesignTimeRectangle="360, 371, 865, 22" ElementType="Text" FriendlyName="'Поиск по параметрам'" FullSelectorArgument="&lt;webctrl class='filter__title' parentid='__next' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='filter__title' parentid='__next' tag='DIV' type='' aaname='Поиск по параметрам' check:innerText='Поиск по параметрам' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type into price from" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1444&amp;brands[0][model]=2416&amp;price_usd[min]=1&amp;price_usd[max]=100000" CvTextArea="656, 382, 44, 13" CvTextArgument="Leha OT" CvType="Text" DesignTimeRectangle="656, 440, 68, 22" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT p-9-price_usd'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='richinput-control__value' aaname='' /&gt;" Guid="2371f47b-00ea-4704-bd3f-eb9267734d90" InformativeScreenshot="984ddc53bba73cdfeaff7b20a1be988f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="565, 622, 72, 19" CvTextArgument="C6pocnTb" CvType="Text" DesignTimeRectangle="537, 618, 99, 24" ElementType="Button" FriendlyName="'Сбросить'" FullSelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' type='button' class='button button--link' check:innerText='Сбросить' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">in_carPriceFrom</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="2" DisplayName="Type into price to" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1444&amp;brands[0][model]=2416&amp;price_usd[min]=1&amp;price_usd[max]=100000" CvTextArea="768, 446, 21, 15" CvTextArgument="AO" CvType="Text" DesignTimeRectangle="769, 440, 68, 22" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT p-9-price_usd'" FullSelectorArgument="&lt;webctrl idx='2' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='richinput-control__value' tag='INPUT' type='text' aaname='' /&gt;" Guid="84db9a40-e2b5-4b55-9e42-6d1000b73717" InformativeScreenshot="02fb6866b7d51a4b489b19800981f8cb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="565, 622, 72, 19" CvTextArgument="C6pocnTb" CvType="Text" DesignTimeRectangle="537, 618, 99, 24" ElementType="Button" FriendlyName="'Сбросить'" FullSelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' type='button' class='button button--link' check:innerText='Сбросить' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">in_carPriceTo</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="uue:VerifyActivityExecutionException" sap:VirtualizedContainerService.HintSize="419.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="uue:VerifyActivityExecutionException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="uue:VerifyActivityExecutionException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,255.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="Oops!" DisplayName="Car make does not exist message box" sap:VirtualizedContainerService.HintSize="353.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+                        <ui:MessageBox.Text>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Car make you specified does not exist :)"</CSharpValue>
+                          </InArgument>
+                        </ui:MessageBox.Text>
+                      </ui:MessageBox>
+                      <ui:Return sap:VirtualizedContainerService.HintSize="353.6,49.6" sap2010:WorkflowViewState.IdRef="Return_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+                <Catch x:TypeArguments="uue:UiAutomationException" sap:VirtualizedContainerService.HintSize="419.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="uue:UiAutomationException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="uue:UiAutomationException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,255.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="Oops!" DisplayName="Car model does not exist message box" sap:VirtualizedContainerService.HintSize="353.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+                        <ui:MessageBox.Text>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Car model you specified does not exist :)"</CSharpValue>
+                          </InArgument>
+                        </ui:MessageBox.Text>
+                      </ui:MessageBox>
+                      <ui:Return sap:VirtualizedContainerService.HintSize="353.6,49.6" sap2010:WorkflowViewState.IdRef="Return_2" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NCheckState DisplayName="Check if the element exists" sap:VirtualizedContainerService.HintSize="1043.2,1623.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="540.8,1380" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dt_ExtractedCars" />
+                    <Variable x:TypeArguments="x:String" Name="firstCarName" />
+                    <Variable x:TypeArguments="x:String" Name="firstCarPrice" />
+                    <Variable x:TypeArguments="x:String" Name="secondCarName" />
+                    <Variable x:TypeArguments="x:String" Name="secondCarPrice" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="478.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.6" BrowserURL="https://cars.av.by/infiniti" DesignTimeRectangle="978, 791, 90, 40" DesignTimeScaleFactor="1" FriendlyName="'chrome.exe 332'" Guid="6d8f2f06-2a10-4f8f-afad-768556718341" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHcAAAA6CAYAAACK/8Y4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVbSURBVHhe7Z3NSyRHGIfzDyQEklMuuQQCYQ4hhz15CuSQ4CkeJZch5BAJBLx5yEFvegmChLksjIcQZvegBxGXBQd3YHZdXMdVxmFcMk2UtfFjM9MuM+KIv1R1V1VXd9foLBp3u3gLnsNWvd3V009XvVUN9r735Vd3QNgJybUYkmsxfcv97Ifv8Mlvw/joj5/wwZ+/4P17vxLvOFfK/fTn7/FhfsR4MPFu01PuF99+jY+nfzQeRKQDo9zPh76hqdcCEnL5iCWxdpCQS1OxPUTk8sWTKYhIJxG5tCq2CyWX72NNAUR6UXL5CwpTAJFelFz+5skUQKQXJZe2P/ah5JoaiXRDci2G5FoMybUYkmsxJNdiSK7F3L7crQ3UWm4fbGDcdDzRN7cvt+Giv+Iibzqe6Ju3J7frYslZQyHOvouOH0Byr8vbk3tWx5ipvVJH0w8wyx0oLSAnH4SdBQw9TMZkineRXZ1FtjQVbVucwTCvZ0SO4/Wbj9QDlt/+C4OLWrtgoDSL8R3RN+fvBxgpTiTifB7mMLpdVrG5zRwGtHZ+Lv8aL0Feo4wd7tVXD9Ijd3EOS6+7fkukXLRReTGLjBY7dtAO2rxyePy9HPJecHyH1Q+J+pE9z69LlHMPS8/Dmzl5bOhbFNed0/r/HblXov94OdtDrhTE5Xt0q5daIxrbPJgTffRHSuSGYvhNf7IbjIallryJXVTqoYik3Imw7pT1q4/Kp1W4XQ+V/TIm19kI2SyjchqEolNFVsZV63DbLoq7jzDOR9b6AxQOPZFC2IOwGp4zs7OHzmkYO7pdhXPuBwL/LvsxI9vaDHAsTbPfJusYk0+D89ktd6shbmIbxYoWy6SpEaWJiMsdYn36x5+zc4qRcynPL08NIXMonvG4+HUlyThH/hmNv1vekx79WS03+1L8OjbqRvVYjhJxhIIYkbrcjGpnArRpNgHLkSrf1Ro95E5gsCxiVheQlyM3PhsIVO7n7N6A3OPl8HwM03pDJxVyzTlUsLIBx28MR4+KZ9NozZ8Oo9N2yASy9Tocf/SZSvxmy5Eals7JBsaKeswURh0XTTkNx8s15BpL9wjFenTNIUmX3JO15I9Y10ZmXK63EeZqw+jK1FluDFrRbFXZilaMiu1eI3cGYy94PqziScuFI3OzNt2PyFmGPVDOIcubPI+zcw7/c/2R2/GqKh/PH+yh1pGLPHNaSIVcla+6DUzqsRwmKCiGh4GPdLbKLgoJ+iqZk28F9YmHpu+cm8O86Krp3mf/vq/6iufH/yfnhjOJ+3I21paWBdXKmph6AcfJafE5FE5EAxM0KOoT03ipLKbn4AZJkWq6i8jVFmnqGmaQfRzbM/tocv0bH97sqAgW9zqov1G5i8uoiEt1nGTaSYdcxpgr7iIrHZ5L2bToSgcXHubFtsGPjctlhAurLts/Bg/IoJwqWZ3rNbC03wimuvM2mhe8Xl6DkMbqXS98/63616bF8UNZ2Ybzqo4lNn36Of2sHaSAa8jF6ZHqu9Y6EtfICk8LK8njUiOXjyh/oSJ/kCxsP1l4Fn1qTXI5akvEZWzxkZhLvnDouph/NiVuqLyGWRS8WJwsvP91bVSbXrZ0GpguiQfkOnLj5aKLJsvD04/Nu4Dbl3sDyNdxV20F+kZug+KvKxPoW6G7xleUErkNetNXhjdJKuUS/UFyLYbkWgzJtRiSazEk12JIrsUoufRXfvah5NLf59qHkkt/WW8fSi59E8M+lFwOfc3GLiJy6TtUdhGRy6EvyNlDQi59+9EeEnI59NVWOzDK5dD3ltNPT7kS+lJ6erlSroT+j4P00bdcIn2QXGu5g/8AMirLt1Emet4AAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='332 объявления о продаже Infiniti (Инфинити) с пробегом в Беларуси' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Cars 3 Pages And Order By Price" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Model'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Price' Sort='Desc'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="478.4,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" InteractionMode="Simulate" LimitExtractionTo="Page" MaximumResults="3" ScopeIdentifier="d25b08ac-cc75-4bb8-acde-fcb46a4909c3" Version="V3">
+                    <uix:NExtractData.DataTable>
+                      <InOutArgument x:TypeArguments="sd:DataTable">
+                        <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_ExtractedCars</CSharpReference>
+                      </InOutArgument>
+                    </uix:NExtractData.DataTable>
+                    <uix:NExtractData.NextLink>
+                      <uix:TargetAnchorable BrowserURL="https://cars.av.by/bmw/4-seriya" CvElementArea="207, 738, 184, 56" CvTextArea="233, 756, 133, 22" CvTextArgument="Noka3aTb eue" CvType="Button" DesignTimeRectangle="209, 611, 182, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Показать ещё'" FullSelectorArgument="&lt;webctrl aaname='Показать ещё' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Показать ещё' tag='A' type='' class='button button--default' check:innerText='Показать ещё' /&gt;" Guid="ad903a47-252a-489a-91ed-c3cfc24cfae7" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="184, 713, 1131, 123" FriendlyName="'Подписка на новые'" FullSelectorArgument="&lt;webctrl class='subscription' parentid='__next' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='subscription' parentid='__next' tag='DIV' type='' aaname='' check:innerText='Подписка на новые объявления&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Когда здесь появится новое объявление, отправим письмо на вашу почту&amp;#xD;&amp;#xA;' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NExtractData.NextLink>
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cars.av.by/infiniti/fx" DesignTimeRectangle="184, 531, 1131, 7203" DesignTimeScaleFactor="1.25" FriendlyName="'Infiniti FX'" FullSelectorArgument="&lt;webctrl class='listing__items' parentid='__next' tag='DIV' /&gt;" Guid="583b4883-77aa-4c53-8634-6fe12221e921" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Купить Infiniti FX | 124 объявления о продаже на av.by | Цены, характеристики, фото.' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                  <ui:MultipleAssign DisplayName="Assign Global Values" sap:VirtualizedContainerService.HintSize="478.4,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">GlobalVariablesNamespace.GlobalVariables.highestCarLink</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">dt_ExtractedCars.Rows[0]["Url"].ToString()</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">GlobalVariablesNamespace.GlobalVariables.lowestCarLink</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">dt_ExtractedCars.Rows[dt_ExtractedCars.Rows.Count - 1]["Url"].ToString()</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <ui:MultipleAssign DisplayName="Assign Car Parameters" sap:VirtualizedContainerService.HintSize="478.4,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">firstCarName</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">dt_ExtractedCars.Rows[0]["Model"].ToString()</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">firstCarPrice</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">dt_ExtractedCars.Rows[0]["Price"].ToString() + " BYN"</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">secondCarName</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">dt_ExtractedCars.Rows[dt_ExtractedCars.Rows.Count - 1]["Model"].ToString()</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">secondCarPrice</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">dt_ExtractedCars.Rows[dt_ExtractedCars.Rows.Count - 1]["Price"].ToString() + " BYN"</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Save Extracted Cars In Excel" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="extractedCars.xls">
+                    <ui:WriteRange.DataTable>
+                      <InArgument x:TypeArguments="sd:DataTable">
+                        <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">dt_ExtractedCars</CSharpValue>
+                      </InArgument>
+                    </ui:WriteRange.DataTable>
+                  </ui:WriteRange>
+                  <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Show Cars Info Form" FormId="c2e6704d-5ca3-48ce-93e9-99035442fb96" sap:VirtualizedContainerService.HintSize="478.4,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
+                    <ufa:ShowFormActivity.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="carName1">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">firstCarName</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="carPrice1">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">firstCarPrice</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="carName2">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">secondCarName</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="carPrice2">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">secondCarPrice</CSharpValue>
+                      </InArgument>
+                    </ufa:ShowFormActivity.Arguments>
+                    <ufa:ShowFormActivity.TopMost>
+                      <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+                        <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
+                      </InArgument>
+                    </ufa:ShowFormActivity.TopMost>
+                    <ufa:ShowFormActivity.WindowState>
+                      <InArgument x:TypeArguments="s:Nullable(usfr:WindowState)">
+                        <CSharpValue x:TypeArguments="s:Nullable(usfr:WindowState)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">UiPath.Studio.Forms.Runtime.WindowState.Maximized</CSharpValue>
+                      </InArgument>
+                    </ufa:ShowFormActivity.WindowState>
+                  </ufa:ShowFormActivity>
+                  <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="478.4,120.8" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+                    <ui:StartTriggers.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:StartTriggers.Arguments>
+                  </ui:StartTriggers>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,257.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Cars not found " sap:VirtualizedContainerService.HintSize="387.2,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_3">
+                    <ui:MessageBox.Text>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"The car with the specified parameters does not exist"</CSharpValue>
+                      </InArgument>
+                    </ui:MessageBox.Text>
+                  </ui:MessageBox>
+                  <ui:Return sap:VirtualizedContainerService.HintSize="387.2,49.6" sap2010:WorkflowViewState.IdRef="Return_3" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://cars.av.by/infiniti" DesignTimeRectangle="995, 853, 115, 53" DesignTimeScaleFactor="1.25" FriendlyName="'chrome.exe 332'" Guid="86b09bac-3996-41ff-b087-3438471114f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAA1CAYAAAByQtSXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUXSURBVHhe7Zy/ayNHFMf9D1wIJFWaawKBoCKkuMpV4IoEV3Fp0oiQIiYQcKcihd3ZTTCYsM2BXISgu8IujNFxYOET6M6Hz/LZyEI+oiU258U/LtL6kIxl/M3M7szu7O5Y58OOkIY38Ck083Zn9L773pvZYoe++voe4tz9+Xt8nB3HnYe/EgNERMwvv/0Gn87+qDUk+p9AzC9G7+OjP3/RGhGDgScmj0gScvDxxKTUagZDfLOjGyAGjyHatZrDkK6TGExITIMgMQ2CxDQIEtMgSEyDIDENgsQ0CBLTIEhMgyAxDaI3Ym5votp0rsEmJnXXE9eiN2LWHVyvOcjqrieuRW/F7DjI2+vIxTlw0PYMSMyb0Fsxz2vI6MbLNTQ8A72Yw8UlWFL43SWMPknapAoPkF6bR7o4Ex1bnsMY72dEruP9W0+DByq78xdGlpVxwXBxHpO7Ym7O348xXphK2Hk8sTCxUwpsrS0Lw8o4v5e3xi7INUrbsavm0tDfYi4vIP+u441E2mUL5dfzSCm2mcOWP+aWwusfWsi6/vVt1j8q+sf3Xa8v0S5c5F+Fzps+0cwtmuMsKPP/DuutmD/ezvdhFX277BXTqq1aj9o2DhfEHO+nj8UMheBOfr7nP+35pnRaB+Va6PikmFNh3xmbV426FxU4HRflgxKmN1gEbJVQPvNN0a4gLe0qNTgtB4W9p5jkkbPxGLkjV5QEJvxaeM/U7j7aZ6HtxE4F9oVnCPy74tmM7ygRfiKVZf9N9jGmX/j3M0vM7bpwWguFsmLLRAoiRnF8XMxRNqd3/QW7p4iMrrzqnupDFlA453bxdSVJ2cfeHbX/W/rkivmMEjP9RvwbFlUTqi0ncPwxciLiVDFTwThzuJI2E7AaF9Srav0KMacwUhI2a0vIysiMR7sgqN2cvVsQ82QlvB9Dt1+Q9K2Y+hooWN2E7Q2G0RHYs7RY9dJbNA2HTCFdq8H2okvX4s6VkRi29ukmMgXVZgYTtoOGTKvxdgMxta1zjEItumfg9L+Yp+uJRd/ZUCIvLqa7GdZaTfSkaqy2+aNoNCtsxyme+p2rInMOmde8nlXwvOnAlrVVSd/jMouwB8g+YnWP12F2z7F/bh6ZbbcS1NPFw31U23JTlkzzfStmUG86dUyrthwmiN804vNIZrvggnC6uovlZJt+f+IhuXbNtLAopmo4j9jvR8Fc8fr2/9TMMFM4b+YjY/27AVpdF6kUsG1LsbeQOxUDTJAR0Z9Iy8WSSLe+Q6RwQfqKiKlsqoI1zCH9LHZm9VDE9BwdOjfqeGb3zu+/VTGXV1AWS7XtaBnpXzEZGUd4jbU2r4UszTnS55cuFsU23rONi8kIN0Iddn7zH4gRmfpYn+PWkT+o+6nrooXGJe+XaxAisX7HDd8fB/MraW7ySHa2YL+tIc/SoVeTz1t+Sr+BmDg7DuauNo/FGlnjaX41ek1fi8kjxttYyD8gGzvP5V5Gn0qdmJzgiMKdv80jzUoe8DsOFl/OCAfKNcwj58bsZOPzbyhRq3u50a5jtigeiJuIGW+XHTRYHZ19ltzc9UbMW0C+3uq2Nf8g5LEk/vovgXo0eaB95SeRx5IPeQV3mwyMmMT7ITENgsQ0CBLTIEhMgyAxDYLENAgS0yBITIMgMQ2CxDQI+tqIQdB3gAyCvtBlEPTtPIOgr1oaRCCmjFBKuYNLREwJfQl6MNGKKfn8h+/w2W9j+OSPnygFDwBdxSQGiXv4D0GoWx7rebrJAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='chrome.exe' title='332 объявления о продаже Infiniti (Инфинити) с пробегом в Беларуси' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1912, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="51ef4b99ca9b2dd26ceb493062f2ea75.jpg" Selector="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" Title="av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_siteToWorkURL</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

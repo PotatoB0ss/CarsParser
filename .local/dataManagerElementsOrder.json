@@ -1,0 +1,71 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lowestCarLink&",
+        "highestCarLink&"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "carMake&Sequence_13",
+        "carModel&Sequence_13",
+        "carPriceFrom&Sequence_13",
+        "carPriceTo&Sequence_13",
+        "siteToWorkURL&Sequence_13",
+        "valueToCheck&Sequence_13",
+        "lowestCarLink&Sequence_1",
+        "highestCarLink&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Initialization.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lowestCarLink&Sequence_1",
+        "highestCarLink&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_siteToWorkURL",
+        "out_carPriceTo",
+        "out_carPriceFrom",
+        "out_carModel",
+        "out_carMake"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "BrowserWork.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "secondCarPrice&Sequence_2",
+        "secondCarName&Sequence_2",
+        "firstCarPrice&Sequence_2",
+        "firstCarName&Sequence_2",
+        "dt_ExtractedCars&Sequence_2",
+        "lowestCarLink&Sequence_1",
+        "highestCarLink&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_carPriceTo",
+        "in_carPriceFrom",
+        "in_carModel",
+        "in_carMake",
+        "in_siteToWorkURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

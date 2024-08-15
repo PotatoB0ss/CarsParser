@@ -1,0 +1,53 @@
+﻿{
+  "Metadata": {
+    "Id": "670ffaff-d180-4a81-a20b-795d41765ca4",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Car Parameters",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Car make",
+        "tableView": true,
+        "key": "carMake",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Car model",
+        "tableView": true,
+        "key": "carModel",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Car price from",
+        "tableView": true,
+        "key": "carPriceFrom",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Car price to",
+        "tableView": true,
+        "key": "carPriceTo",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

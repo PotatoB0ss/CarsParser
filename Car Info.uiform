@@ -1,0 +1,113 @@
+﻿{
+  "Metadata": {
+    "Id": "c2e6704d-5ca3-48ce-93e9-99035442fb96",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Car result",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h1",
+        "content": "CAR WITH THE HIGHEST PRICE",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "CAR NAME",
+        "labelPosition": "left-left",
+        "disabled": true,
+        "tableView": true,
+        "validate": {
+          "required": true
+        },
+        "key": "carName1",
+        "type": "textfield",
+        "labelWidth": 10,
+        "input": true
+      },
+      {
+        "label": "CAR PRICE",
+        "labelPosition": "left-left",
+        "disabled": true,
+        "tableView": true,
+        "validate": {
+          "required": true
+        },
+        "key": "carPrice1",
+        "type": "textfield",
+        "labelWidth": 10,
+        "input": true
+      },
+      {
+        "label": "THE HIGHEST PRICE CAR LINK",
+        "showValidations": false,
+        "theme": "info",
+        "tableView": false,
+        "key": "carWithTheHighestPrice",
+        "properties": {
+          "myCusKey": "123"
+        },
+        "type": "button",
+        "saveOnEnter": false,
+        "input": true
+      },
+      {
+        "tag": "h1",
+        "content": "CAR WITH THE LOWEST PRICE",
+        "key": "label1",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "CAR NAME",
+        "labelPosition": "left-left",
+        "disabled": true,
+        "tableView": true,
+        "validate": {
+          "required": true
+        },
+        "key": "carName2",
+        "type": "textfield",
+        "labelWidth": 10,
+        "input": true
+      },
+      {
+        "label": "CAR PRICE",
+        "labelPosition": "left-left",
+        "disabled": true,
+        "tableView": true,
+        "validate": {
+          "required": true
+        },
+        "key": "carPrice2",
+        "type": "textfield",
+        "labelWidth": 10,
+        "input": true
+      },
+      {
+        "label": "THE LOWEST PRICE CAR LINK",
+        "showValidations": false,
+        "theme": "info",
+        "tableView": false,
+        "key": "carWithTheLowestPrice",
+        "properties": {
+          "myCusKey": "123"
+        },
+        "type": "button",
+        "saveOnEnter": false,
+        "input": true
+      }
+    ]
+  }
+}
